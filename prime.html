@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prime Number</title>
+	<script type="text/javascript">
+		function aaa(){
+			var a = document.getElementById("startInput").value;
+			document.write(" <center>The prime numbers are: <br> </center>")
+			for (var counter = 2; counter <= a; counter++) {
+
+		    var notPrime = false;
+		    for (var i = 2; i <= counter; i++) {
+		        if (counter%i===0 && i!==counter) {
+		            notPrime = true;
+		        }
+		    }
+		    if (notPrime === false) {
+		                document.write("<center>"+counter + "<br>"+"</center>");
+		    }
+		}
+		}	
+		
+	</script>
+</head>
+<body style="text-align: center;">
+	<h3 style="">Prime Checkers</h3>
+	<input type="Number" id="startInput" value="" style="width: 30%; height: 30px; border-radius: 4px; border: 1px solid gray;" /><br>
+	<button type="submit" onclick="aaa()" style="margin-top: 5px; height: 30px; width: 8%;">Check Prime</button>
+</body>
+</html>

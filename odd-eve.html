@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Check Odd and Even Number</title>
+    <script>
+      function printNum(){
+        var start = parseInt(document.getElementById("start").value);
+        var end = parseInt(document.getElementById("end").value);
+        var evenNums = "<br>Even Numbers:<br>";
+        var oddNums = "<br>Odd Numbers:<br>";
+ 
+        for(i=start; i<=end; i++){
+    
+          if(i % 2 == 0){
+            evenNums += i + "<br>";
+          }else{
+			  oddNums += i + "<br>";
+		  }
+        }
+        document.getElementById("resulteven").innerHTML = evenNums;
+        document.getElementById("resultodd").innerHTML = oddNums;
+		
+      }
+    </script>
+  </head>
+  <body>
+    <h3>Check Odd and Even Number</h3>
+    Start: <input type="number" min="0" id="start" value="" /><br><br>
+    End: <input type="number" id="end" min="1" value="" /><br><br>
+    <input type="button" onclick="printNum()" value="Print" />
+    <div class="" id="resulteven"></div>
+    <div class="" id="resultodd"></div>
+    
+  </body>
+</html>
+

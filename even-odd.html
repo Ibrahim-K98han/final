@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function aaa(){
+			var a = document.getElementById("startInput").value;
+			
+			if(a%2==0){
+				document.write("<center>"+a+" is an even number.</center>");
+			}
+			else{
+				document.write("<center>"+a+" is an odd number.</center>");
+			}
+		}	
+		
+	</script>
+</head>
+<body style="text-align: center;">
+	<!--
+	<script type="text/javascript">
+		var num=prompt("Enter your number: ");
+		if (num%2==0){
+			document.write(num+" is an even number.");
+		}
+		else{
+			document.write(num+" is an odd number.");
+		}
+	</script>
+-->
+
+	<h3 style="">Even/Odd Number Checkers</h3>
+	<input type="Number" id="startInput" value="" style="width: 30%; height: 30px; border-radius: 4px; border: 1px solid gray;" /><br>
+	<button type="submit" onclick="aaa()" style="margin-top: 5px; height: 30px; width: 12%;">Check Even/Odd</button>
+
+
+</body>
+</html>

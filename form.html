@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Form</title>
+	</head>
+	<body>
+
+		<form name="myForm" method="get" action="" autocomplete="off" onsubmit="myValidion()">
+			<table>
+			<tr>
+				<th>Name</th>
+				<td>
+					<input type="text" name="name">
+				</td>
+			</tr>
+
+			<tr>
+				<th>Email</th>
+				<td>
+                    <input type="text" onkeyup="myEmail()" id="email"><br>
+					<h5 id="show"></h5>
+                    <!-- <input type="text" name="email"> -->
+					<!-- <textarea name="email"></textarea> -->
+				</td>
+			</tr>
+			<tr>
+				<th>Address</th>
+				<td>
+                   
+					<textarea name="address"></textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<th>Gender</th>
+				<td>
+					<input type="radio" name="gender" value="Male">Male
+					<input type="radio" name="gender" value="Female">Female
+				</td>
+			</tr>
+			<tr>
+				<th>Education</th>
+				<td>
+					<input type="checkbox" name="edu" value="SSC">SSC
+					<input type="checkbox" name="edu" value="Diploma">Diploma
+				</td>
+			</tr>
+			<tr>
+				<td>Round</td>
+				<td>
+					<select name="select">
+					<option value="">Round</option>
+					<option value="Round-1">Round-1</option>
+					<option value="Round-2">Round-2</option>
+					<option value="Round-3">Round-3</option>
+					<option value="Round-4">Round-4</option>
+					<option value="Round-5">Round-5</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<button type="button" onclick="myValidion();">Submit</button>
+				</td>
+			</tr>
+			</table>
+		</form>
+
+		<script type="text/javascript">
+
+	function myValidion(){
+        var mywindow=open('',"New Window","toolbar=no,width=800,height=600")
+		var name 	= myForm.name.value;
+		var email = myForm.email.value;
+		var address = myForm.address.value;
+		var gender 	= myForm.gender;
+		for(var i=0; gender[i]; i++){
+		      if(gender[i].checked){
+		           var genderValue = gender[i].value;
+		           break;
+		      }
+		}
+
+		var edu = myForm.edu;
+		for(var i=0; edu[i]; i++){
+			var getEdu = "";
+		      if(edu[i].checked){
+		          getEdu += edu[i].value;
+		           break;
+		      }
+		}
+
+		var select = myForm.select;
+
+		if (select.selectedIndex > 0) {
+			getSel = select.value;
+		}
+
+		mywindow.document.write("Name: "+name+"<br>"+"Email: "+email+"<br>"+"Address: "+address+"<br>"+"Gender: "+genderValue+"<br>"+"Education: "+getEdu+"<br>"+"Round: "+getSel);	
+		document.write("Name: "+name+"<br>"+"Email: "+email+"<br>"+"Address: "+address+"<br>"+"Gender: "+genderValue+"<br>"+"Education: "+getEdu+"<br>"+"Round: "+getSel);	
+
+	}
+    function myEmail(){
+
+        var email = document.getElementById("email").value;
+
+        if (/@/.test(email) == true && /com/.test(email) == true) {
+            document.getElementById("show").innerHTML = "<p style='color:green;'>Valid Email address</p>";
+        }else{
+            document.getElementById("show").innerHTML = "<p style='color:red;'>Invalied Email address</p>";
+        }
+        }
+    // function GetStanWin(){
+    //     open("show.html","show" ,"toolbar=no, width=200, height=150");
+    // }
+
+    
+		</script>
+
+	</body>
+</html>

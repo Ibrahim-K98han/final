@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Email Validiton</title>
+	</head>
+	<body>
+		<h2>Email Validation</h2>
+		<table>
+			<tr>
+				<th></th>
+				<td>
+					<input type="text" onkeyup="myEmail()" id="email"><br>
+					<h5 id="show"></h5>
+				</td>
+
+			</tr>
+		</table>
+
+		<script type="text/javascript">
+
+	function myEmail(){
+
+		var email = document.getElementById("email").value;
+
+		if (/@/.test(email) == true && /com/.test(email) == true) {
+			document.getElementById("show").innerHTML = "<p style='color:green;'>Valid Email address</p>";
+		}else{
+			document.getElementById("show").innerHTML = "<p style='color:red;'>Invalied Email address</p>";
+		}
+	}
+	
+		</script>
+
+	</body>
+</html>
